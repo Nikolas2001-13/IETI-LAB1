@@ -1,8 +1,7 @@
 package edu.eci.lab1.data;
 
 import edu.eci.lab1.dto.UserDto;
-
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 public class User {
 
@@ -12,7 +11,13 @@ public class User {
     private String lastName;
     private Boolean createdAt;
 
-    public User(UserDto userDto){}
+    public User(){}
+    public User(UserDto userDto){
+        this.id = UUID.randomUUID().toString();
+        this.name = userDto.getName();
+        this.email = userDto.getEmail();
+        this.lastName = userDto.getLastName();
+    }
 
     public String getId() {
         return id;

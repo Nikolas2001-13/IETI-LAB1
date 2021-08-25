@@ -3,16 +3,18 @@ package edu.eci.lab1.service.impl;
 import edu.eci.lab1.data.User;
 import edu.eci.lab1.exception.UserException;
 import edu.eci.lab1.service.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
+@Service
 public class UserServiceHashMap implements UserService {
 
     private HashMap<String, User> userHashMap;
 
+    public UserServiceHashMap(){}
 
     @Override
     public User create(User user) {
